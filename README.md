@@ -11,7 +11,7 @@ This example requires the RaVis library that can be found [here](https://github.
 
 ### Flash Library
 This is a Flex 3.5 project and is compiled using playerglobal.swc for 10.1. You can
-download it in the following [zip file](https://github.com/matganine/testPT4/Playerglobal.10.1.zip) and replace the existing
+download it in the following [zip file](/Playerglobal.10.1.zip) and replace the existing
 file in {YOUR_FLASH_BUILDER_PATH}\sdks\3.5\frameworks\libs\player\10\playerglobal.swc
 
 ### Ravis Project Import
