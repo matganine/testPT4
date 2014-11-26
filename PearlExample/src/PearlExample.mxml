@@ -34,8 +34,12 @@
             graph = new org.un.cava.birdeye.ravis.graphLayout.data.Graph("XMLAsDocsGraph",false,xmldata);
             vgraph.graph = graph;
             var layouter:ConcentricRadialLayout = new ConcentricRadialLayout(vgraph);
+            layouter.disableAnimation=false;
+            layouter.autoFitEnabled=false;
+            layouter.linkLength = 100;
+            layouter.setAngularBounds(180, 360);
+            layouter.minNodeSeparation = 88;
             vgraph.layouter = layouter;
-            layouter.autoFitEnabled = true;
             vgraph.maxVisibleDistance = 1000;
             var startRoot:IVisualNode = graph.nodeByStringId("1").vnode;
             vgraph.displayEdgeLabels = false;
