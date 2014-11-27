@@ -11,37 +11,27 @@ package layout {
    import org.un.cava.birdeye.ravis.graphLayout.visual.IVisualNode;
    import org.un.cava.birdeye.ravis.utils.Geometry;
    import org.un.cava.birdeye.ravis.utils.GraphicUtils;
-   
-   
+
    public class AnimatedBaseLayout extends BaseLayouter implements ILayoutAlgorithm {
-      
-      
+
       public const ANIM_RADIAL:int = 1;
-      
-      
+
       public const ANIM_STRAIGHT:int = 2;
-      
-      
+
       private const _ANIMATIONSTEPS:int = 50;
-      
-      
+
       private const _ANIMATIONTIMINGINTERVALSIZE:Number = 10; 
-      
-      
+
       private const _MAXANIMTIMERDELAY:int = 100;
-      
-      
+
       protected var _animInProgress:Boolean = false;
       
       private var _animationType:int = ANIM_RADIAL;
-      
-      
+
       private var _animStep:int; 
-      
-      
+
       private var _animTimer:Timer;
-      
-      
+
       private var _currentDrawing:BaseLayoutDrawing;
 
       public function AnimatedBaseLayout(vg:IVisualGraph = null):void {
@@ -49,19 +39,16 @@ package layout {
          super(vg);
          _animInProgress = false;
       }
-      
-      
+
       override public function get animInProgress():Boolean {
          return _animInProgress;
       }
-      
-      
+
       override public function resetAll():void {
          super.resetAll();
          killTimer();
       }
-      
-      
+
       override protected function set currentDrawing(dr:BaseLayoutDrawing):void {
          _currentDrawing = dr;
          
@@ -72,8 +59,7 @@ package layout {
       protected function set animationType(type:int):void {
          _animationType = type;
       }
-      
-      
+
       protected function killTimer():void {
          if(_animTimer != null) {
             
@@ -82,14 +68,12 @@ package layout {
             
          }
       }
-      
-      
+
       protected function resetAnimation():void {
          /* reset animation cycle */
          _animStep = 0;
       }
-      
-      
+
       protected function startAnimation():void {
          var cyclefinished:Boolean;
          
@@ -130,8 +114,7 @@ package layout {
             startAnimTimer();
          }
       }
-      
-      
+
       protected function interpolatePolarCoords():Boolean {
          var visVNodes:Dictionary;
          var vn:IVisualNode;
@@ -236,8 +219,7 @@ package layout {
          }
          return cyclefinished;
       }
-      
-      
+
       protected function interpolateCartCoords():Boolean {
          var visVNodes:Dictionary;
          var vn:IVisualNode;
@@ -298,25 +280,21 @@ package layout {
             /* set into the vnode */
             vn.x = stepPoint.x;
             vn.y = stepPoint.y;
-            
-            
+
             vn.orientAngle = Geometry.rad2deg(Geometry.normaliseAngle(Geometry.deg2rad(_currentDrawing.getPolarPhi(vn.node))));
-            
-            
+
             /* commit, i.e. move the node */
             vn.commit();
          }
          return cyclefinished;
       }
-      
-      
+
       protected function setCoords():Boolean {
          var visVNodes:Dictionary;
          var vn:IVisualNode;
          var n:INode;
          var targetPoint:Point;
-         
-         
+
          /* careful for invisible nodes, the values are not
          * calculated (obviously), so we need to make sure
          * to exclude them */
@@ -327,8 +305,7 @@ package layout {
             if(!vn.isVisible) {
                throw Error("received invisible vnode from list of visible vnodes");
             }
-            
-            
+
             n = vn.node;
             /* get relative target coordinates in cartesian form */
             targetPoint = _currentDrawing.getRelCartCoordinates(n);
@@ -347,8 +324,7 @@ package layout {
             
             /* commit, i.e. move the node */
             commitNode(vn);
-            
-            
+
             vn.orientAngle = Geometry.rad2deg(Geometry.normaliseAngle(Geometry.deg2rad(_currentDrawing.getPolarPhi(vn.node))));
 
          }
@@ -396,8 +372,7 @@ package layout {
          }
          _animTimer.start();
       }
-      
-      
+
       private function animTimerFired(event:TimerEvent = null):void {
          
          startAnimation();

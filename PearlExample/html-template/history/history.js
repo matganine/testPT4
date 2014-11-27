@@ -550,8 +550,7 @@ BrowserHistory = (function() {
                 //setHash(def);
                 setInterval(checkForUrlChange, 50);
             }
-            
-            
+
             if (browser.firefox || browser.opera)
             {
                 var reg = new RegExp("#" + def + "$");

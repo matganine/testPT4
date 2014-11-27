@@ -289,4 +289,3 @@ function AC_GetArgs(args, ext, srcParamName, classid, mimeType){
   return ret;
 }
 
-
