@@ -1,8 +1,7 @@
 # Tree Shape Displayer
 
 ## Presentation
-Pearltrees is a place to organize all your interests. With this project we are 
-showing how to use our extension of the Ravis library. 
+With this project we are showing how to use our extension of the Ravis library. 
 
 ## Overview
 This is an example code showing how to use our extension of the RaVis (Relational 
