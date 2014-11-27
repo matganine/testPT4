@@ -9,7 +9,7 @@ This is an example code showing how to use our extension of the RaVis (Relationa
 Analysis Components) library in order to layout pearls and pearltrees.
 
 ## Requirements
-This example requires the Ravis library that can be found [here](https://github.com/pearltrees/ravis) or [here] (https://code.google.com/p/birdeye/wiki/RaVis)
+This example requires the Ravis library that can be found [here](https://github.com/pearltrees/ravis).
 
 ## Setting up project and components
 
