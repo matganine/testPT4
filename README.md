@@ -9,7 +9,7 @@ This is an example code showing how to use our extension of the RaVis (Relationa
 Analysis Components) library in order to layout pearls and pearltrees.
 
 ## Requirements
-This example requires the Ravis library that can be found [here](https://github.com/pearltrees/ravis).
+This example requires the Ravis library that can be found [here](https://code.google.com/p/birdeye/wiki/RaVis).
 
 ## Setting up project and components
 
@@ -20,7 +20,7 @@ file in {YOUR_FLASH_BUILDER_PATH}\sdks\3.5\frameworks\libs\player\10\playergloba
 
 #### Ravis Project Import
 Ravis is the library used for the visualization of our tree organization. You need to
-import it as a separate project in your workspace. You can find it [here](https://github.com/pearltrees/ravis).
+import it as a separate project in your workspace. You can find it [here](https://code.google.com/p/birdeye/wiki/RaVis).
 
 #### Tree Shape Displayer
 You finally need to import the PearlExample project in your workspace and add the above
