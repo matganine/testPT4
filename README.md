@@ -1,11 +1,11 @@
-# Tree Shape Displayer
+# Tree Shape Example
 
 ## Presentation
 With this project we are showing how to use our extension of the Ravis library. 
 
 ## Overview
 This is an example code showing how to use our extension of the RaVis (Relational 
-Analysis Components) library in order to layout pearls and pearltrees.
+Analysis Components) library in order to layout nodes and trees.
 
 ## Requirements
 This example requires the Ravis library that can be found [here](https://code.google.com/p/birdeye/wiki/RaVis).
@@ -21,30 +21,30 @@ file in {YOUR_FLASH_BUILDER_PATH}\sdks\3.5\frameworks\libs\player\10\playergloba
 Ravis is the library used for the visualization of our tree organization. You need to
 import it as a separate project in your workspace. You can find it [here](https://code.google.com/p/birdeye/wiki/RaVis).
 
-#### Tree Shape Displayer
-You finally need to import the PearlExample project in your workspace and add the above
+#### Tree Shape Example
+You finally need to import the tree-shape-example project in your workspace and add the above
 Ravis project in your Library Path. Building the project and executing it should show you
-an example of Pearltree representation.
+an example of tree shape representation.
 
 ## Usage
 
 Once you have set up the project and components, you can easily draw the following
-pearltree example:
+tree shape example:
 
-![Alt text](/readme/pearlExample.png?raw=true "Example Pearltree Representation")
+![Alt text](/readme/pearlExample.png?raw=true "Example Basic Tree Shape Visualization")
 
 The data for this example is easily loaded with the xml file: graph.xml.
-For example creating a pearltree and a pearl and linking them together takes as little as
+For example creating a tree and a node and linking them together takes as little as
 this code:
 
 ``` xml
-<!-- pearltree -->
+<!-- tree -->
 <Node id="1" name="Trending" nodeColor="0x1e51c3" nodeSize="70" nodeClass="earth" />
 
-<!-- pearl -->
+<!-- node -->
 <Node id="2" name="Music" nodeColor="0xcf39f8" nodeSize="50" nodeClass="leaf"/>
 
-<!-- Link between the pearltree and the pearl -->
+<!-- Link between the tree and the node -->
 <Edge fromID="1" toID="2" color="0x000000" />
 ```
 
