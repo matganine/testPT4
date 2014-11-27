@@ -1,4 +1,4 @@
-# PearlExample
+# Tree Shape Displayer
 
 ## Presentation
 Pearltrees is a place to organize all your interests. With this project we are 
@@ -9,20 +9,20 @@ This is an example code showing how to use our extension of the RaVis (Relationa
 Analysis Components) library in order to layout pearls and pearltrees.
 
 ## Requirements
-This example requires the RaVis library that can be found [here](https://github.com/pearltrees/ravis).
+This example requires the Ravis library that can be found [here](https://github.com/pearltrees/ravis) or [here] (https://code.google.com/p/birdeye/wiki/RaVis)
 
 ## Setting up project and components
 
 #### Flash Library
 This is a Flex 3.5 project and is compiled using playerglobal.swc for 10.1. You can
-download it in the following [zip file](/Playerglobal.10.1.zip) and replace the existing
+download it in the following [zip file](/readme/Playerglobal.10.1.zip) and replace the existing
 file in {YOUR_FLASH_BUILDER_PATH}\sdks\3.5\frameworks\libs\player\10\playerglobal.swc
 
 #### Ravis Project Import
 Ravis is the library used for the visualization of our tree organization. You need to
 import it as a separate project in your workspace. You can find it [here](https://github.com/pearltrees/ravis).
 
-#### PearlExample
+#### Tree Shape Displayer
 You finally need to import the PearlExample project in your workspace and add the above
 Ravis project in your Library Path. Building the project and executing it should show you
 an example of Pearltree representation.
@@ -32,7 +32,7 @@ an example of Pearltree representation.
 Once you have set up the project and components, you can easily draw the following
 pearltree example:
 
-![Alt text](/pearlExample.png?raw=true "Example Pearltree Representation")
+![Alt text](/readme/pearlExample.png?raw=true "Example Pearltree Representation")
 
 The data for this example is easily loaded with the xml file: graph.xml.
 For example creating a pearltree and a pearl and linking them together takes as little as
