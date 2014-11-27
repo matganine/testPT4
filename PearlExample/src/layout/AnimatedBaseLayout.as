@@ -43,9 +43,7 @@ package layout {
       
       
       private var _currentDrawing:BaseLayoutDrawing;
-      
-      
-      
+
       public function AnimatedBaseLayout(vg:IVisualGraph = null):void {
          
          super(vg);
@@ -70,9 +68,7 @@ package layout {
          /* also set in the super class */
          super.currentDrawing = dr;
       }
-      
-      
-      
+
       protected function set animationType(type:int):void {
          _animationType = type;
       }
@@ -120,10 +116,7 @@ package layout {
          
          /* make sure the edges are redrawn */
          _layoutChanged = true;
-         
-         
-         
-         
+
          /* check if we ran out of anim cycles, but are not finished */
          if (cyclefinished) {
             
@@ -357,9 +350,7 @@ package layout {
             
             
             vn.orientAngle = Geometry.rad2deg(Geometry.normaliseAngle(Geometry.deg2rad(_currentDrawing.getPolarPhi(vn.node))));
-            
-            
-            
+
          }
          return true;
       }
@@ -380,23 +371,17 @@ package layout {
          /* this is the input into into the atan() function, which depends on the
          * timing interval and the current signed animation step */
          factorinput = _ANIMATIONTIMINGINTERVALSIZE * (signedAnimStep / _ANIMATIONSTEPS);            
-         
-         
-         
+
          /* calculate the timing factor using the atan() function
          * since we take the absolute value, 
          * its range goes from PI / 2 to 0 back to PI / 2 */
          factor = Math.abs(Math.atan(factorinput));
-         
-         
-         
+
          /* now the delay for our timer is now the factors fraction
          * of PI/2 times the maximum timer delay, i.e. the full timer
          * delay if the factor has a value of PI / 2 */
          timerdelay = (factor / (Math.PI / 2)) * _MAXANIMTIMERDELAY;
-         
-         
-         
+
          /* now creating the new timer with the specified delay
          * and ask for one execution, then the event handler will be
          * called, which does nothing except to call the interpolation

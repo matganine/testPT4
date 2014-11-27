@@ -15,17 +15,9 @@ package layout {
       
       
       public static const DEFAULT_RADIUS:Number = 100;
-      
-      
-      
-      
-      
+
       private var _minNodeSeparation:int=100;
-      
-      
-      
-      
-      
+
       private var _previousRoot:INode;        
       
       
@@ -102,9 +94,7 @@ package layout {
       
       override public function layoutPass():Boolean {
          var rv:Boolean;
-         
-         
-         
+
          if(!_vgraph) {
             trace("No Vgraph set in ConcentricRadialLayouter, aborting");
             return false;
@@ -134,9 +124,7 @@ package layout {
          if(_layoutChanged || true) {
             initDrawing();
          }
-         
-         
-         
+
          /* set the coordinates in the drawing of root
          * to 0,0 */
          _currentDrawing.setCartCoordinates(_root,new Point(0,0));
@@ -162,10 +150,7 @@ package layout {
          
          /* we may have preset angular bounds
          * XXX this is untested, yet */
-         
-         
-         
-         
+
          /* do a static layout pass */
          if(_maxDepth > 0) {
             calculateStaticLayout(_root,1,_theta1,_theta2, false);
@@ -257,10 +242,7 @@ package layout {
          if(n.vnode == null) {
             throw Error("Node has no vnode");
          }
-         
-         
-         
-         
+
          if(!n.vnode.isVisible) {
             trace("Node:"+n.id+" not yet visible but called in angular width calc");
             return 0;
@@ -270,26 +252,7 @@ package layout {
          if(d > _maxDepth) {
             _maxDepth = d;
          }
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
+
          if(d == 0) {
             diameter = 0; 
          } else {
@@ -302,10 +265,7 @@ package layout {
          /* diameter is an angular width value in radians,
          * so we convert it to degrees when used */
          diameter = Geometry.rad2deg(diameter);
-         
-         
-         
-         
+
          /* here the code checks if the node 'is expanded'
          * which means if he has visible children
          * we do it differently, if the node is invisible
@@ -358,9 +318,7 @@ package layout {
          }
          _incrArray = null;
       }
-      
-      
-      
+
       private function calculateStaticLayout(n:INode, depth:Number, theta1:Number, theta2:Number, forRadiusOnly:Boolean, maxIncrease:Number =0):void {
          
          var dtheta:Number;
@@ -378,9 +336,7 @@ package layout {
          cfrac = 0.0;
          
          awidth = _currentDrawing.getAngularWidth(n);    
-         
-         
-         
+
          var aWidthInRad:Number = Geometry.deg2rad(awidth) * _reduceRadiusHackFactor;
          var dthetaInRad:Number = Geometry.deg2rad(dtheta);
          if (awidth<dtheta) {
@@ -401,10 +357,7 @@ package layout {
             } else {
                maxIncrease = Math.max(maxIncrease, increaseRadius(depth,  getRadius(depth) *  aWidthInRad /dthetaInRad));
             }
-            
-            
-            
-            
+
          }
          dtheta2 = dtheta / 2.0;
          
@@ -477,9 +430,7 @@ package layout {
                _tetaModifier[cn]-= tetaDown/2; 	
             }
          }    
-         
-         
-         
+
       }
       private function applyModification(node:INode, teta:Number):void {
          var children: Array = _stree.getChildren(node);
@@ -588,10 +539,7 @@ package layout {
          if ((rightRootNode != null) && (outsideLeft == null)) {
             _thread[prevOLeft] = rightRootNode;
          }
-         
-         
-         
-         
+
          if (rightRootNode != null && leftRootNode == null) {
             
             
@@ -603,13 +551,9 @@ package layout {
                if (originalPhi>180 && originalPhi- rightTeta<180) {
                   bestAngularOffset -= rightTeta- (originalPhi-180);
                   rightTeta = (originalPhi-180);
-                  
-                  
-                  
+
                } 
-               
-               
-               
+
                rightRootNode = nextLeft(rightRootNode);
                
                
@@ -653,13 +597,7 @@ package layout {
             return _stree.getIthChildPerNode(v,nochildren - 1);
          } else {
             var ret:INode =_thread[v];
-            
-            
-            
-            
-            
-            
-            
+
             return ret;
          }
       }
@@ -672,13 +610,7 @@ package layout {
             return _stree.getIthChildPerNode(v,0);
          } else {
             var ret:INode = _thread[v];
-            
-            
-            
-            
-            
-            
-            
+
          }
          return ret;
       }

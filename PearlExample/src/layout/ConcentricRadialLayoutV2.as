@@ -24,9 +24,7 @@ package layout {
       
       public static const DEBUG:Boolean = false;
       public static var   REPOSITION_PARENT:int = 1;
-      
-      
-      
+
       public static var OVERLOAD_FACTOR:Number = 90;
       
       public static var FIRST_LEVEL_MAX_NODE_SEPARATION:Number = 100;
@@ -42,9 +40,7 @@ package layout {
       
       private static var _preferredRadius:Array;
       private static var _preferredRadiusSO:SharedObject;
-      
-      
-      
+
       private var _previousRoot:INode;        
       
       
@@ -232,9 +228,7 @@ package layout {
          if(_layoutChanged || true) {
             initDrawing();
          }
-         
-         
-         
+
          /* set the coordinates in the drawing of root
          * to 0,0 */
          _currentDrawing.setCartCoordinates(_root,new Point(0,0));
@@ -342,14 +336,7 @@ package layout {
          return Math.abs(_currentDrawing.getPolarR(lNode)*phi);
          
       }
-      
-      
-      
-      
-      
-      
-      
-      
+
       public function computeRadiusForLevel( level:int, nodesByLevel:Array, tetaByLevel:Array):Number {
          var nbNode:int= (level +1) <nodesByLevel.length ? (nodesByLevel[level +1 ] as Array).length  :0;
          var currentRadius:Number = 0;
@@ -383,9 +370,7 @@ package layout {
       override protected function commitNode(vn: IVisualNode ):void {
          
       }
-      
-      
-      
+
       private function getOverlapBetweenChildGroup(r:Number, nodesOnPreviousLevel:Array, tetaAtLevel:Array, leftIndex:int, rightIndex:int):Number {
          var leftNode:INode = nodesOnPreviousLevel[leftIndex];
          var rightNode:INode = nodesOnPreviousLevel[rightIndex];
@@ -444,10 +429,7 @@ package layout {
             
             if (indexWithChildren.length > 1) {
                var offsetBetweenDeltasInGroup:Array = new Array(indexWithChildren.length);
-               
-               
-               
-               
+
                for (i = 0; i < offsetBetweenDeltasInGroup.length; i++) {
                   var leftIndex:int  = i>0? indexWithChildren[i-1]:indexWithChildren[indexWithChildren.length-1];
                   var rightIndex:int = indexWithChildren[i];
@@ -484,10 +466,7 @@ package layout {
                   (groups[0] as PearlGroup).positionNodesInGroup(parentNodes, indexWithChildren, deltaByParent, offsetBetweenDeltasInGroup);
                }
             }
-            
-            
-            
-            
+
             var childIndex:int = 0;
             var parentIndex:int = 0;
             var parentNode:INode;
@@ -519,10 +498,7 @@ package layout {
             }
             
          }
-         
-         
-         
-         
+
          performLayoutAtLevelWithMinSquareDeviation(nodesByLevel, level + 1, deltasByLevel, tetaByLevel);
       }
       
@@ -548,10 +524,7 @@ package layout {
                offsetBetweenDeltasInGroup[i] += 2 * Math.PI;
             }
          }
-         
-         
-         
-         
+
          var groups:Array = new Array();
          for (i=0; i < nodes.length;i++) {
             groups.push(new PearlGroup(i));
