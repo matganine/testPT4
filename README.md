@@ -48,7 +48,7 @@ this code:
 <Edge fromID="1" toID="2" color="0x000000" />
 ```
 
-See the example by clicking [here](http://xxx.broceliand.fr/opensource/tree-shape-example/tree-shape-example.html).
+See the example by clicking [here](http://www.pearltrees.com/opensource/tree-shape-example/tree-shape-example.html).
 
 ## License
 
