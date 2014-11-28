@@ -4,7 +4,7 @@
 With this project we show how to use our extension of the Ravis library. 
 
 ## Overview
-This is an example code showing how to use our extension of the RaVis (Relational 
+This is an example showing how to use our extension of the RaVis (Relational 
 Analysis Components) library in order to layout nodes and trees.
 
 ## Requirements
