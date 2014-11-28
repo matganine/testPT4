@@ -48,6 +48,8 @@ this code:
 <Edge fromID="1" toID="2" color="0x000000" />
 ```
 
+This example is also available on this [link](http://xxx.broceliand.fr/flash-tree-shape-example/flash-tree-shape-example.html).
+
 ## License
 
 The MIT License (MIT)
