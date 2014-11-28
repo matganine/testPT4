@@ -1,7 +1,7 @@
 # Tree Shape Example
 
 ## Presentation
-With this project we are showing how to use our extension of the Ravis library. 
+With this project we show how to use our extension of the Ravis library. 
 
 ## Overview
 This is an example code showing how to use our extension of the RaVis (Relational 
@@ -48,7 +48,7 @@ this code:
 <Edge fromID="1" toID="2" color="0x000000" />
 ```
 
-This visualization example is also available on this [link](http://xxx.broceliand.fr/flash-tree-shape-example/flash-tree-shape-example.html).
+See the example by clicking [here](http://xxx.broceliand.fr/tree-shape-example/tree-shape-example.html).
 
 ## License
 
